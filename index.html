@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+      text-align: center;
+      width: 350px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 90%;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    a {
+      display: block;
+      margin: 15px 0;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="loginForm">
+  <img src="Red Black Modern Laboratory Line Logo.png" alt="Logo">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="errorMsg" style="color:red;"></p>
+</div>
+
+<div class="container hidden" id="mainContent">
+  <img src="Red Black Modern Laboratory Line Logo.png" alt="Logo">
+  <h2>Dashboard</h2>
+  <a href="https://docs.google.com/spreadsheets/d/1ePlDrwqkJQ63-S4Ac7ytflBnn6w7kOaLYePU0JNzW1Y/edit?usp=sharing" target="_blank">
+    1. Purchase Tracking Lab
+  </a>
+  <a href="https://docs.google.com/spreadsheets/d/1xJT1-SsskttK46yWvyexCMZB4ku5JISczftUUHzfXEc/edit?hl=id&gid=0#gid=0" target="_blank">
+    2. TAT GC
+  </a>
+</div>
+
+<script>
+  const validUsername = "admin";
+  const validPassword = "12345";
+
+  function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === validUsername && pass === validPassword) {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("mainContent").classList.remove("hidden");
+    } else {
+      document.getElementById("errorMsg").textContent = "Username atau Password salah!";
+    }
+  }
+</script>
+
+</body>
+</html>
